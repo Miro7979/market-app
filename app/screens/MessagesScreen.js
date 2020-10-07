@@ -21,7 +21,11 @@ const initialMessages = [
 ]
 
 function MessagesScreen(props) {
+  // bring in state to rerender after delete the message
   const [messages, setMessages] = useState(initialMessages);
+
+  // use useState hook as a boolean to refresh the state
+  const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = message => {
     // Delete the message, use the state hooks
@@ -45,6 +49,24 @@ function MessagesScreen(props) {
               />}
           />}
         ItemSeparatorComponent={ListItemSeparator}
+        // use the boolean state variable for refreshing
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages([
+            {
+              id: 2,
+              title: 'wa wa',
+              description: 'It is a nice evning',
+              image: require('../assets/person.jpg')
+            },
+            {
+              id: 100,
+              title: 'It is refreshing',
+              description: 'It is a nice evning',
+              image: require('../assets/car1.jpg')
+            }
+          ])
+        }}
       />
     </Screen>
   );
