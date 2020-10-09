@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, Image, View } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, Image, View, TextInput } from 'react-native';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 
@@ -14,12 +14,15 @@ import Screen from './app/component/Screen';
 import Icon from './app/component/Icon';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
+import AppTextInput from './app/component/AppTextInput';
 export default function App() {
 
 
   return (
-    <ListingsScreen
-    />)
+    <Screen>
+      <AppTextInput placeholder='Username' icon='email' />
+    </Screen>
+  )
 }
 
 
