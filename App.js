@@ -15,12 +15,14 @@ import Icon from './app/component/Icon';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
 import AppTextInput from './app/component/AppTextInput';
+import AppPicker from './app/component/AppPicker';
 export default function App() {
 
 
   return (
     <Screen>
-      <AppTextInput placeholder='Username' icon='email' />
+      <AppPicker icon='apps' placeholder='Category' />
+      <AppTextInput icon='email' placeholder='email' />
     </Screen>
   )
 }
