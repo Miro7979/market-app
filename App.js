@@ -13,11 +13,12 @@ import MessagesScreen from './app/screens/MessagesScreen';
 import Screen from './app/component/Screen';
 import Icon from './app/component/Icon';
 import AccountScreen from './app/screens/AccountScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
 export default function App() {
 
 
   return (
-    <AccountScreen
+    <ListingsScreen
     />)
 }
 
