@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, View, StyleSheet } from 'react-native';
 import colors from '../config/colors';
-import AppText from '../component/AppText';
+import AppText from '../component/Text';
 import ListItem from '../component/ListItem';
 
 function ListDetailsScreen() {

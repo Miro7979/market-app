@@ -4,11 +4,20 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 import defaultStyles from '../config/styles';
-import AppText from './AppText';
+import AppText from './Text';
 import Screen from './Screen';
 import PickerItem from './PickerItem';
 
-function AppPicker({ icon, items, placeholder, onSelectItem, selectedItem, width = '100%' }) {
+function AppPicker({
+  icon,
+  items,
+  numberOfColumns,
+  onSelectItem,
+  placeholder,
+  PickerItemComponent = PickerItem,
+  selectedItem,
+  width = '100%'
+}) {
 
   const [modalVisible, setModalVisible] = useState(false);
   return (
@@ -30,12 +39,15 @@ function AppPicker({ icon, items, placeholder, onSelectItem, selectedItem, width
           <FlatList
             data={items}
             keyExtractor={item => item.value.toString()}
-            renderItem={({ item }) => <PickerItem
-              label={item.label}
-              onPress={() => {
-                setModalVisible(false)
-                onSelectItem(item)
-              }} />} />
+            numColumns={numberOfColumns}
+            renderItem={({ item }) =>
+              <PickerItemComponent
+                item={item}
+                label={item.label}
+                onPress={() => {
+                  setModalVisible(false)
+                  onSelectItem(item)
+                }} />} />
         </Screen>
       </Modal>
     </React.Fragment>
