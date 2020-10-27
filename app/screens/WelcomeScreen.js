@@ -4,7 +4,7 @@ import { Image, ImageBackground, StyleSheet, View, Text } from 'react-native';
 import AppButton from '../component/Button';
 
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
       blurRadius={5}
@@ -15,8 +15,8 @@ function WelcomeScreen(props) {
         <Text style={styles.tagLine}>Sell the things you don't need</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <AppButton title='Login' />
-        <AppButton title='Register' color='secondary' />
+        <AppButton title='Login' onPress={() => navigation.navigate('Login')} />
+        <AppButton title='Register' color='secondary' onPress={() => navigation.navigate('Register')} />
       </View>
     </ImageBackground>
   );
@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
   },
   logoContainer: {
     position: 'absolute',
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   tagLine: {
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: '600',
     paddingVertical: 20,
   },
