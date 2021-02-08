@@ -9,7 +9,7 @@ function ImageInputList({ imageUris = [], onRemoveImage, onAddImage }) {
     <View>
       <ScrollView
         ref={scrollView}
-        horizontal
+        horizontal={true}
         onContentSizeChange={() => scrollView.current.scrollToEnd()}
       >
         <View style={styles.container}>

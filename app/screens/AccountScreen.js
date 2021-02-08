@@ -6,7 +6,6 @@ import ListItemSeparator from '../component/ListItemSeparator';
 import Screen from '../component/Screen';
 import Icon from '../component/Icon';
 import colors from '../config/colors';
-import navigationTheme from '../navigation/navigationTheme';
 
 const menuItems = [
   {
