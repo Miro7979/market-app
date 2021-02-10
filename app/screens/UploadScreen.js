@@ -31,7 +31,7 @@ function UploadScreen({ onDone, progress = 0, visible = false }) {
 
 const styles = StyleSheet.create({
   animation: {
-    width: 150,
+    width: 200,
   },
   container: {
     alignItems: "center",
