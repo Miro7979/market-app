@@ -34,7 +34,7 @@ function ListingEditScreen() {
   const [uploadVisible, setUploadVisible] = useState(false);
   const [progress, setProgress] = useState(0);
 
-  const handleSubmit = async (listing) => {
+  const handleSubmit = async (listing, { resetForm }) => {
     setProgress(0);
     setUploadVisible(true);
     const result = await listingsApi.addListing(
@@ -46,7 +46,8 @@ function ListingEditScreen() {
       setUploadVisible(false);
       return alert('Could not save the listing. ');
     }
-  }
+    resetForm();
+  };
   return (
     <Screen style={styles.container}>
       <UploadScreen onDone={() => setUploadVisible(false)} progress={progress} visible={uploadVisible} />
